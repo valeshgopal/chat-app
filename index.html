@@ -4,19 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Chat UI</title>
 </head>
 <body>
     <main class="chat-ui">
-        <section class="chat-friends">
-    
+        <section class="chat-users">
+            <div class="chat-users__user">
+                <div class="chat-users__user-pic">
+                    <img src="./images/1.jpg">
+                </div>
+                <div class="chat-users__user-details">
+                    <h4>Lisa Swift</h4>
+                    <p>Senior Developer</p>
+                </div>
+            </div>
+
+            <div class="chat-users__search">
+                <input type="text" placeholder="Search Friends">
+                <i class='bx bx-search'></i>
+            </div>
+
+            <div class="chat-users__friends">
+                <div class="chat-users__friend chat-users__friend-1">
+                    <div class="chat-users__friend-pic">
+                        <img src="images/2.jpg">
+                    </div>
+                    <div class="chat-users__friend-details">
+                        <h4>Alicia Wright</h4>
+                        <p>Ok. Let's meet with the client tomorrow.</p>
+                    </div>
+                </div>
+                <div class="chat-users__friend chat-users__friend-2">
+                    <div class="chat-users__friend-pic">
+                        <img src="images/3.jpg">
+                    </div>
+                    <div class="chat-users__friend-details">
+                        <h4>Joe Lutz</h4>
+                        <p>Nice to meet you.</p>
+                    </div>
+                </div>
+                <div class="chat-users__friend chat-users__friend-3">
+                    <div class="chat-users__friend-pic">
+                        <img src="images/4.jpg">
+                    </div>
+                    <div class="chat-users__friend-details">
+                        <h4>Kendall Campbell</h4>
+                        <p>That's great! then start working from tomorrow.</p>
+                    </div>
+                </div>
+                <div class="chat-users__friend chat-users__friend-4">
+                    <div class="chat-users__friend-pic">
+                        <img src="images/5.jpg">
+                    </div>
+                    <div class="chat-users__friend-details">
+                        <h4>Alicia Wright</h4>
+                        <p>Ok. Let's meet with the client tomorrow.</p>
+                    </div>
+                </div>
+                <div class="chat-users__friend chat-users__friend-5">
+                    <div class="chat-users__friend-pic">
+                        <img src="images/6.jpg">
+                    </div>
+                    <div class="chat-users__friend-details">
+                        <h4>Trina George</h4>
+                        <p>That sounds good!</p>
+                    </div>
+                </div>
+                <div class="chat-users__friend chat-users__friend-6">
+                    <div class="chat-users__friend-pic">
+                        <img src="images/7.jpg">
+                    </div>
+                    <div class="chat-users__friend-details">
+                        <h4>Edward Wesley</h4>
+                        <p>The component will be ready by tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
     
         <section class="chat-msgs">
     
         </section>
     
-        <section class="chat-user"></section>
+        <section class="chat-receiver"></section>
     </main>
 </body>
 </html>
