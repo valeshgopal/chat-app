@@ -179,13 +179,11 @@ body {
   border-radius: 50%;
   margin-left: 0.5rem;
 }
-.chat-msgs__icons {
-  /* margin-left: auto; */
-}
 .chat-msgs__icons i {
   font-size: 1.5rem;
   margin: 0 0.25rem;
   color: rgba(125, 125, 125, 0.5);
+  cursor: pointer;
 }
 .chat-msgs__divider {
   height: 1px;
