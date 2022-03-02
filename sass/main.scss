@@ -8,6 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
 }
 
 $color-primary: rgba(4, 60, 175, 1);
@@ -20,15 +21,46 @@ $color-secondary: rgba(119, 172, 241, 1);
 .chat-users {
   display: flex;
   flex-direction: column;
+  background-color: #f7f7f7;
 
   &__user {
+    font-size: 1rem;
     display: flex;
   }
 
   &__user-pic {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
     object-fit: cover;
+  }
+
+  &__search {
+    position: relative;
+  }
+
+  &__search input {
+    font-family: inherit;
+    padding: 0.7rem 1rem;
+    padding-left: 2.75rem;
+    border: none;
+    border-radius: 5rem;
+  }
+
+  &__search input::placeholder {
+    font-size: 1rem;
+  }
+
+  &__search input:focus {
+    outline: none;
+    border: none;
+  }
+
+  &__search i {
+    font-size: 1.3rem;
+    position: absolute;
+    left: 1rem;
+    top: 0.75rem;
+    color: grey;
   }
 }
