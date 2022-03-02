@@ -83,12 +83,14 @@ body {
 .chat-users__friends-container {
   overflow-y: scroll;
   overflow-x: hidden;
+  margin: 0 -1.5rem;
 }
 .chat-users__friends {
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  padding: 0 1.5rem;
 }
 .chat-users__friend {
   display: flex;
