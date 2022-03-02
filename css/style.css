@@ -53,5 +53,18 @@ body {
   top: 0.75rem;
   color: grey;
 }
+.chat-users__friends {
+  display: flex;
+  flex-direction: column;
+}
+.chat-users__friend {
+  display: flex;
+}
+.chat-users__friend-pic {
+  height: 30px;
+  width: 30px;
+  border: 50%;
+  object-fit: contain;
+}
 
 /*# sourceMappingURL=style.css.map */

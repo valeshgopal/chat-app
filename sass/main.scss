@@ -63,4 +63,20 @@ $color-secondary: rgba(119, 172, 241, 1);
     top: 0.75rem;
     color: grey;
   }
+
+  &__friends {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__friend {
+    display: flex;
+  }
+
+  &__friend-pic {
+    height: 30px;
+    width: 30px;
+    border: 50%;
+    object-fit: contain;
+  }
 }
