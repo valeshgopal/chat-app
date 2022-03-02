@@ -10,6 +10,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 62.5%;
   height: 100vh;
+  overflow: hidden;
 }
 
 $color-primary: rgba(4, 60, 175, 1);
@@ -21,6 +22,7 @@ $color-secondary: rgba(119, 172, 241, 1);
 }
 
 .chat-users {
+  flex-basis: 25%;
   display: flex;
   flex-direction: column;
   background-color: #f8f8f8;
@@ -90,6 +92,11 @@ $color-secondary: rgba(119, 172, 241, 1);
     }
   }
 
+  &__friends-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
   &__friends {
     font-size: 0.8rem;
     display: flex;
@@ -100,8 +107,12 @@ $color-secondary: rgba(119, 172, 241, 1);
   &__friend {
     display: flex;
     align-items: center;
-    margin-bottom: 1.2rem;
-    width: 100%;
+    margin: 0 -1.5rem;
+    height: 5rem;
+    padding: 0 1.5rem;
+    &:hover {
+      background-color: #fff;
+    }
   }
 
   &__friend-pic {
@@ -112,7 +123,7 @@ $color-secondary: rgba(119, 172, 241, 1);
   }
 
   &__friend-details {
-    width: 14rem;
+    width: 12rem;
     margin-left: 1rem;
 
     h4 {

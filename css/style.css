@@ -9,6 +9,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 62.5%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .chat-ui {
@@ -17,6 +18,7 @@ body {
 }
 
 .chat-users {
+  flex-basis: 25%;
   display: flex;
   flex-direction: column;
   background-color: #f8f8f8;
@@ -78,6 +80,10 @@ body {
   color: grey;
   cursor: pointer;
 }
+.chat-users__friends-container {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 .chat-users__friends {
   font-size: 0.8rem;
   display: flex;
@@ -87,8 +93,12 @@ body {
 .chat-users__friend {
   display: flex;
   align-items: center;
-  margin-bottom: 1.2rem;
-  width: 100%;
+  margin: 0 -1.5rem;
+  height: 5rem;
+  padding: 0 1.5rem;
+}
+.chat-users__friend:hover {
+  background-color: #fff;
 }
 .chat-users__friend-pic {
   height: 3rem;
@@ -97,7 +107,7 @@ body {
   object-fit: cover;
 }
 .chat-users__friend-details {
-  width: 14rem;
+  width: 12rem;
   margin-left: 1rem;
 }
 .chat-users__friend-details h4 {
