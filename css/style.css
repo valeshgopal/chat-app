@@ -23,6 +23,7 @@ body {
   flex-direction: column;
   background-color: #f8f8f8;
   padding: 2rem 1.5rem;
+  padding-bottom: 0rem;
 }
 .chat-users__user {
   font-size: 1rem;
