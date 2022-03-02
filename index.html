@@ -130,7 +130,7 @@
         <section class="chat-msgs">
             <div class="chat-msgs__header">
                 <div class="chat-msgs__user">
-                    <img src="images/profile-pic.png" alt="" class="chat-msgs__-user-pic">
+                    <img src="images/profile-pic.png" alt="" class="chat-msgs__user-pic">
                     <p class="chat-msgs__user-name">Valesh Gopal</p>
                     <div class="chat-msgs__online"></div>
                 </div>
@@ -140,15 +140,24 @@
                     <i class='bx bx-bell'></i>  
                 </div>
             </div>
-            <hr>
+            <div class="chat-msgs__divider"></div>
             <div class="chat-msgs__display"></div>
             <div class="chat-msgs__send">
-                <input type="text" placeholder="Write Something">
-                <i class='bx bx-microphone'></i>
-                <i class='bx bx-paperclip'></i>
-                <i class='bx bx-camera'></i>
-                <i class='bx bx-smile'></i>
-                <i class='bx bxs-send'></i>
+                <div class="chat-msgs__divider"></div>
+                <div class="chat-msgs__send-msg">
+                    <div>
+                        <input type="text" placeholder="Write Something">
+                    </div>
+                    <div class="chat-msgs__send-icons">
+                        <i class='bx bx-microphone' id="mic"></i>
+                        <div class="chat-msgs__icons-right">
+                            <i class='bx bx-paperclip' id="clip"></i>
+                            <i class='bx bx-camera' id="camera"></i>
+                            <i class='bx bx-smile' id="smile"></i>
+                            <i class='bx bxs-send' id="send"></i>
+                        </div>
+                    </div>
+                </div>               
             </div>
     
         </section>
