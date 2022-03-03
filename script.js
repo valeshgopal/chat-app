@@ -37,6 +37,17 @@ const getDate = function () {
   return `${weekday}, ${newDate} ${month} ${year}`;
 };
 
+const updateLS = function (key) {
+  setInterval(function () {
+    if (localStorage.getItem(key)) {
+      localStorage.removeItem(key);
+    }
+    const newItem = localStorage.setItem(key, msgContainer.innerHTML);
+    console.log(localStorage.getItem(key));
+    return newItem;
+  }, 2000);
+};
+
 const msgDisplay = function () {
   if (!msgInput.value) return;
   const msg = document.createElement("div");
@@ -62,8 +73,7 @@ const msgDisplay = function () {
   if (msgContainer.innerHTML.includes(`${getDate()}`)) return;
   msgContainer.append(dateHtml);
 
-  localStorage.setItem("key", msgContainer.innerHTML);
-  console.log(localStorage.getItem("key"));
+  updateLS("key");
 };
 
 msgDisplay();
@@ -77,3 +87,4 @@ document.addEventListener("keydown", (e) => {
 });
 
 msgContainer.innerHTML = localStorage.getItem("key");
+updateLS("key");
