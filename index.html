@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <title>Chat UI</title>
+    <link rel="icon" href="images/chat.png">
+    <script defer src="script.js"></script>
+    <title>Chat App</title>
 </head>
 <body>
     <main class="chat-ui">
@@ -141,12 +143,16 @@
                 </div>
             </div>
             <div class="chat-msgs__divider"></div>
-            <div class="chat-msgs__display"></div>
+
+           
+            <div class="chat-msgs__display" id="msg-container"></div>
+            
+            
             <div class="chat-msgs__send">
                 <div class="chat-msgs__divider"></div>
                 <div class="chat-msgs__send-msg">
                     <div>
-                        <input type="text" placeholder="Write Something">
+                        <input type="text" placeholder="Write Something" autofocus="autofocus" id="msg-input">
                     </div>
                     <div class="chat-msgs__send-icons">
                         <i class='bx bx-microphone' id="mic"></i>
@@ -154,7 +160,7 @@
                             <i class='bx bx-paperclip' id="clip"></i>
                             <i class='bx bx-camera' id="camera"></i>
                             <i class='bx bx-smile' id="smile"></i>
-                            <i class='bx bxs-send' id="send"></i>
+                            <i class='bx bxs-send' id="send-btn"></i>
                         </div>
                     </div>
                 </div>               
@@ -223,3 +229,5 @@
     </main>
 </body>
 </html>
+
+<!-- <div class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa molestiae rem nisi maxime quaerat delectus est adipisci reprehenderit quas enim?</div> -->

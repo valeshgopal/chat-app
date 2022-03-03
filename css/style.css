@@ -195,6 +195,11 @@ body {
   height: 70vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  padding: 0 1rem;
 }
 .chat-msgs__send {
   height: 15vh;
@@ -236,7 +241,7 @@ body {
   left: 2%;
   top: 27%;
 }
-.chat-msgs__send-icons #send {
+.chat-msgs__send-icons #send-btn {
   color: #fff;
   background-color: #5463ff;
   padding: 1rem;
@@ -248,6 +253,65 @@ body {
   align-items: center;
   right: -0.7rem;
   bottom: 1%;
+}
+
+.msg-style {
+  font-size: 1rem;
+  background-color: #5463ff;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  margin-right: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+}
+
+.msg-user-pic {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: cover;
+}
+
+.msg-wrapper {
+  margin: 1rem 0;
+  display: flex;
+  align-self: flex-end;
+  align-items: flex-end;
+  max-width: 350px;
+}
+
+.msg-date-wrapper {
+  margin: 0 auto;
+}
+
+.msg-date {
+  color: grey;
+  text-align: center;
+}
+
+.msg-date::before,
+.msg-date::after {
+  background-color: rgba(125, 125, 125, 0.2);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.msg-date::before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.msg-date::after {
+  left: 0.5em;
+  margin-right: -50%;
 }
 
 .chat-profile {
