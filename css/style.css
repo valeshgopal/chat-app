@@ -130,6 +130,7 @@ body {
 }
 .chat-users__time {
   color: grey;
+  font-size: 0.7rem;
 }
 .chat-users__status {
   color: #5463ff;

@@ -34,7 +34,7 @@ const getDate = function () {
   const date = d.getDate();
   const newDate = date > 9 ? date : `0${date}`;
   const year = d.getFullYear();
-  return `${weekday}, ${month} ${newDate} ${year}`;
+  return `${weekday}, ${newDate} ${month} ${year}`;
 };
 
 const msgDisplay = function () {
