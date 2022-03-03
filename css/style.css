@@ -129,7 +129,7 @@ body {
   align-items: flex-end;
 }
 .chat-users__time {
-  color: grey;
+  color: rgba(84, 99, 255, 0.65);
   font-size: 0.7rem;
 }
 .chat-users__status {
@@ -201,6 +201,7 @@ body {
   flex-direction: column-reverse;
   align-items: flex-start;
   padding: 0 1rem;
+  padding-top: 0.5rem;
 }
 .chat-msgs__send {
   height: 15vh;
@@ -260,7 +261,7 @@ body {
   font-size: 1rem;
   background-color: #5463ff;
   color: #fff;
-  padding: 0.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   border-bottom-left-radius: 0;
   margin-right: 0.5rem;
@@ -435,6 +436,11 @@ body {
   border: 1px solid #5463ff;
   border-radius: 5rem;
   color: #5463ff;
+  transition: all 0.3s ease;
+}
+.chat-profile__attachments-btn:hover {
+  background-color: #5463ff;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

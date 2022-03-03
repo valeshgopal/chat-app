@@ -44,7 +44,7 @@ const msgDisplay = function () {
   msg.innerHTML = `
     <p class="msg-style">
         ${msgInput.value}
-        <span style="position: absolute; bottom: -15px; right: 0; color: grey; font-size: 10px;">
+        <span style="position: absolute; bottom: -18px; right: 0; color: rgba(84, 99, 255, 0.75); font-size: 10px;">
             ${getTime()}
         </span>
     </p>
