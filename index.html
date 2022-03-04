@@ -7,7 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/chat.png">
-    <script defer src="script.js"></script>
+    <script defer src="script.js" type="module"></script>
     <title>Chat App</title>
 </head>
 <body>
@@ -18,21 +18,21 @@
                     <img src="./images/1.jpg" class="chat-users__user-pic">
                 </div>
                 <div class="chat-users__user-details">
-                    <h4>Lisa Swift</h4>
-                    <p>Senior Developer</p>
+                    <h4 class="profile-name">Lisa Swift</h4>
+                    <p class="job-desc">Senior Developer</p>
                 </div>
                 <div class="chat-users__user-edit">
-                    <i class='bx bx-pencil'></i>
+                    <i class='bx bx-pencil' id="edit-profile"></i>
                 </div>
             </div>
 
             <div class="chat-users__search search-box">
-                <input type="text" placeholder="Search Friends">
+                <input type="text" placeholder="Search Friends" class="search-friends">
                 <i class='bx bx-search'></i>
             </div>
             <div class="chat-users__friends-container">
                 <div class="chat-users__friends">
-                    <div class="chat-users__friend chat-users__friend-1">
+                    <!-- <div class="chat-users__friend chat-users__friend-1">
                         <div class="chat-users__friend-img">
                             <img src="images/2.jpg" class="chat-users__friend-pic">
                         </div>
@@ -123,7 +123,7 @@
                             <p class="chat-users__time">06:44 AM</p>
                             <p class="chat-users__status"><i class='bx bx-check'></i></p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

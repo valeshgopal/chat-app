@@ -7,6 +7,16 @@ const sendBtn = document.getElementById("send-btn");
 const msgContainer = document.getElementById("msg-container");
 const friendsContainer = document.querySelector(".chat-users__friends");
 const searchFriends = document.querySelector(".search-friends");
+const profileName = document.querySelector(".profile-name");
+const jobDesc = document.querySelector(".job-desc");
+const editProfile = document.getElementById("edit-profile");
+
+editProfile.addEventListener("click", () => {
+  profileName.setAttribute("contentEditable", "true");
+  jobDesc.setAttribute("contentEditable", "true");
+  jobDesc.focus();
+  profileName.focus();
+});
 
 const getTime = function () {
   const hrs = new Date().getHours();
@@ -120,13 +130,7 @@ const friendsList = function (arr) {
 const friendsHtml = friendsList(data);
 friendsContainer.insertAdjacentHTML("afterbegin", friendsHtml.join(" "));
 
-//search friends list
-// const searchInput = searchFriends.value;
-// console.log(searchInput);
-
 searchFriends.addEventListener("input", (e) => {
-  // console.log(e.target.value);
-  // console.log(data);
   const filterFriends = data.filter(
     (person) =>
       person.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
