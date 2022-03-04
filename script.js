@@ -45,7 +45,7 @@ const updateLS = function (key) {
     const newItem = localStorage.setItem(key, msgContainer.innerHTML);
     console.log(localStorage.getItem(key));
     return newItem;
-  }, 2000);
+  }, 20000);
 };
 
 const msgDisplay = function () {
@@ -69,9 +69,10 @@ const msgDisplay = function () {
   dateHtml.innerHTML = `
         <div class="msg-date">${getDate()}</div>
         `;
+
   msgContainer.prepend(msg);
   if (msgContainer.innerHTML.includes(`${getDate()}`)) return;
-  msgContainer.append(dateHtml);
+  msg.insertAdjacentHTML("afterend", dateHtml.outerHTML);
 
   updateLS("key");
 };
