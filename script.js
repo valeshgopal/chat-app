@@ -105,7 +105,6 @@ msgContainer.innerHTML = localStorage.getItem("key");
 updateLS("key");
 
 //friends data array
-
 const friendsList = function (arr) {
   return arr.map((person) => {
     const { id, name, img, msg, time } = person;
@@ -130,15 +129,20 @@ const friendsList = function (arr) {
 const friendsHtml = friendsList(data);
 friendsContainer.insertAdjacentHTML("afterbegin", friendsHtml.join(" "));
 
+searchFriends.value = "";
 searchFriends.addEventListener("input", (e) => {
   const filterFriends = data.filter(
     (person) =>
       person.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
       person.name.toUpperCase().includes(e.target.value.toUpperCase())
   );
-  // person.name.toLowerCase().includes(e.target.value);
-
-  console.log(filterFriends);
 
   friendsContainer.innerHTML = friendsList(filterFriends).join(" ");
+  if (friendsList(filterFriends).length === 0) {
+    friendsContainer.innerHTML = `
+    <div style="text-align: center; color:rgba(0, 0, 0, 0.5)">
+      ---- No Results Found ----
+    </div>
+    `;
+  }
 });
