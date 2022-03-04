@@ -59,7 +59,7 @@ const updateLS = function (key) {
     const newItem = localStorage.setItem(key, msgContainer.innerHTML);
     // console.log(localStorage.getItem(key));
     return newItem;
-  }, 20000);
+  }, 2000);
 };
 
 const msgDisplay = function () {
