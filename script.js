@@ -1,8 +1,12 @@
 "use strict";
 
+import data from "./data.js";
+
 const msgInput = document.getElementById("msg-input");
 const sendBtn = document.getElementById("send-btn");
 const msgContainer = document.getElementById("msg-container");
+const friendsContainer = document.querySelector(".chat-users__friends");
+const searchFriends = document.querySelector(".search-friends");
 
 const getTime = function () {
   const hrs = new Date().getHours();
@@ -43,7 +47,7 @@ const updateLS = function (key) {
       localStorage.removeItem(key);
     }
     const newItem = localStorage.setItem(key, msgContainer.innerHTML);
-    console.log(localStorage.getItem(key));
+    // console.log(localStorage.getItem(key));
     return newItem;
   }, 20000);
 };
@@ -89,3 +93,48 @@ document.addEventListener("keydown", (e) => {
 
 msgContainer.innerHTML = localStorage.getItem("key");
 updateLS("key");
+
+//friends data array
+
+const friendsList = function (arr) {
+  return arr.map((person) => {
+    const { id, name, img, msg, time } = person;
+    const html = `
+    <div class="chat-users__friend">
+      <div class="chat-users__friend-img">
+          <img src=${img} class="chat-users__friend-pic">
+      </div>
+      <div class="chat-users__friend-details">
+          <h4>${name}</h4>
+          <p>${msg}</p>
+      </div>
+      <div class="chat-users__updates">
+          <p class="chat-users__time">${time}</p>
+      </div>
+    </div>
+`;
+    return html;
+  });
+};
+
+const friendsHtml = friendsList(data);
+friendsContainer.insertAdjacentHTML("afterbegin", friendsHtml.join(" "));
+
+//search friends list
+// const searchInput = searchFriends.value;
+// console.log(searchInput);
+
+searchFriends.addEventListener("input", (e) => {
+  // console.log(e.target.value);
+  // console.log(data);
+  const filterFriends = data.filter(
+    (person) =>
+      person.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+      person.name.toUpperCase().includes(e.target.value.toUpperCase())
+  );
+  // person.name.toLowerCase().includes(e.target.value);
+
+  console.log(filterFriends);
+
+  friendsContainer.innerHTML = friendsList(filterFriends).join(" ");
+});
