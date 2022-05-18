@@ -102,7 +102,7 @@ body {
   padding: 0 1.5rem;
 }
 .chat-users__friend:hover {
-  background-color: #fff;
+  background-color: rgba(84, 99, 255, 0.1);
 }
 .chat-users__friend-pic {
   height: 3rem;
@@ -333,6 +333,8 @@ body {
 .chat-profile__user-pic {
   width: 7rem;
   height: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .chat-profile__user-details h4 {
   font-weight: 400;
@@ -443,4 +445,7 @@ body {
   color: #fff;
 }
 
+.active {
+  background-color: rgba(84, 99, 255, 0.1);
+}
 /*# sourceMappingURL=style.css.map */

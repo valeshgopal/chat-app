@@ -116,7 +116,7 @@ $color-secondary: rgba(84, 99, 255, 0.1);
     height: 5rem;
     padding: 0 1.5rem;
     &:hover {
-      background-color: #fff;
+      background-color: rgba(84, 99, 255, 0.1);
     }
   }
 
@@ -379,7 +379,10 @@ $color-secondary: rgba(84, 99, 255, 0.1);
   &__user-pic {
     width: 7rem;
     height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
   }
+
   &__user-details {
     & h4 {
       font-weight: 400;
@@ -504,4 +507,8 @@ $color-secondary: rgba(84, 99, 255, 0.1);
       color: #fff;
     }
   }
+}
+
+.active {
+  background-color: rgba(84, 99, 255, 0.1);
 }

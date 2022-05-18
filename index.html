@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="images/chat.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="images/chat.png" />
     <script defer src="script.js" type="module"></script>
     <title>Chat App</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="chat-ui">
-        <section class="chat-users">
-            <div class="chat-users__user">
-                <div class="chat-users__user-img">
-                    <img src="./images/1.jpg" class="chat-users__user-pic">
-                </div>
-                <div class="chat-users__user-details">
-                    <h4 class="profile-name">Lisa Swift</h4>
-                    <p class="job-desc">Senior Developer</p>
-                </div>
-                <div class="chat-users__user-edit">
-                    <i class='bx bx-pencil' id="edit-profile"></i>
-                </div>
-            </div>
+      <section class="chat-users">
+        <div class="chat-users__user">
+          <div class="chat-users__user-img">
+            <img src="./images/1.jpg" class="chat-users__user-pic" />
+          </div>
+          <div class="chat-users__user-details">
+            <h4 class="profile-name">Lisa Swift</h4>
+            <p class="job-desc">Senior Developer</p>
+          </div>
+          <div class="chat-users__user-edit">
+            <i class="bx bx-pencil" id="edit-profile"></i>
+          </div>
+        </div>
 
-            <div class="chat-users__search search-box">
-                <input type="text" placeholder="Search Friends" class="search-friends">
-                <i class='bx bx-search'></i>
-            </div>
-            <div class="chat-users__friends-container">
-                <div class="chat-users__friends">
-                    <!-- <div class="chat-users__friend chat-users__friend-1">
+        <div class="chat-users__search search-box">
+          <input
+            type="text"
+            placeholder="Search Friends"
+            class="search-friends"
+          />
+          <i class="bx bx-search"></i>
+        </div>
+        <div class="chat-users__friends-container">
+          <div class="chat-users__friends">
+            <!-- <div class="chat-users__friend chat-users__friend-1">
                         <div class="chat-users__friend-img">
                             <img src="images/2.jpg" class="chat-users__friend-pic">
                         </div>
@@ -124,110 +131,106 @@
                             <p class="chat-users__status"><i class='bx bx-check'></i></p>
                         </div>
                     </div> -->
-                </div>
-            </div>
+          </div>
+        </div>
+      </section>
 
-        </section>
-    
-        <section class="chat-msgs">
-            <div class="chat-msgs__header">
-                <div class="chat-msgs__user">
-                    <img src="images/profile-pic.png" alt="" class="chat-msgs__user-pic">
-                    <p class="chat-msgs__user-name">Valesh Gopal</p>
-                    <div class="chat-msgs__online"></div>
-                </div>
-                <div class="chat-msgs__icons">
-                    <i class='bx bx-search'></i>
-                    <i class='bx bx-heart'></i>
-                    <i class='bx bx-bell'></i>  
-                </div>
-            </div>
-            <div class="chat-msgs__divider"></div>
+      <section class="chat-msgs">
+        <div class="chat-msgs__header">
+          <div class="chat-msgs__user">
+            <img src="images/2.jpg" alt="" class="chat-msgs__user-pic" />
+            <p class="chat-msgs__user-name">Alicia Wright</p>
+            <div class="chat-msgs__online"></div>
+          </div>
+          <div class="chat-msgs__icons">
+            <i class="bx bx-search"></i>
+            <i class="bx bx-heart"></i>
+            <i class="bx bx-bell"></i>
+          </div>
+        </div>
+        <div class="chat-msgs__divider"></div>
 
-           
-            <div class="chat-msgs__display" id="msg-container"></div>
-            
-            
-            <div class="chat-msgs__send">
-                <div class="chat-msgs__divider"></div>
-                <div class="chat-msgs__send-msg">
-                    <div>
-                        <input type="text" placeholder="Write Something" autofocus="autofocus" id="msg-input">
-                    </div>
-                    <div class="chat-msgs__send-icons">
-                        <i class='bx bx-microphone' id="mic"></i>
-                        <div class="chat-msgs__icons-right">
-                            <i class='bx bx-paperclip' id="clip"></i>
-                            <i class='bx bx-camera' id="camera"></i>
-                            <i class='bx bx-smile' id="smile"></i>
-                            <i class='bx bxs-send' id="send-btn"></i>
-                        </div>
-                    </div>
-                </div>               
-            </div>
-    
-        </section>
-    
-        <section class="chat-profile">
-            <div class="chat-users__search search-box">
-                <input type="text" placeholder="Search People">
-                <i class='bx bx-search'></i>
-            </div>
-            <div class="chat-profile__user">
-                <div class="chat-profile__user-img">
-                    <img src="./images/profile-pic.png" class="chat-profile__user-pic">
-                </div>
-                <div class="chat-profile__user-details">
-                    <h4>Valesh Gopal</h4>
-                    <p>Junior Developer</p>
-                </div>
-            </div>
+        <div class="chat-msgs__display" id="msg-container"></div>
 
-            <div class="chat-profile__chat-icons">
-                <div class="chat-profile__chat-icons--chat">
-                    <i class='bx bxs-message-rounded'></i>
-                    <p>Chat</p>
-                </div>   
-                <div class="line"></div>
-                <div class="chat-profile__chat-icons--chat">
-                    <i class='bx bxs-video'></i>
-                    <p>Video Call</p>
-                </div>
+        <div class="chat-msgs__send">
+          <div class="chat-msgs__divider"></div>
+          <div class="chat-msgs__send-msg">
+            <div>
+              <input
+                type="text"
+                placeholder="Write Something"
+                autofocus="autofocus"
+                id="msg-input"
+              />
             </div>
-
-            <div class="chat-profile__social">
-                <div class="chat-profile__social-comp">
-                    <div>
-                        <i class='bx bx-user'></i>
-                    </div>  
-                    <p>View Friends</p>
-                </div>
-                <div class="chat-profile__social-comp">
-                    <div>
-                        <i class='bx bx-heart'></i>
-                    </div>
-                    <p>Add to Favorites</p>
-                </div>
+            <div class="chat-msgs__send-icons">
+              <i class="bx bx-microphone" id="mic"></i>
+              <div class="chat-msgs__icons-right">
+                <i class="bx bx-paperclip" id="clip"></i>
+                <i class="bx bx-camera" id="camera"></i>
+                <i class="bx bx-smile" id="smile"></i>
+                <i class="bx bxs-send" id="send-btn"></i>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="chat-profile__attachments">
-                <div class="chat-profile__attachments-heading">
-                    Attachments
-                </div>
-                <div class="chat-profile__attachments-types">
-                    <p>PDF</p>
-                    <p>Video</p>
-                    <p>MP3</p>
-                    <p>Image</p>
-                </div>
-                <button class="chat-profile__attachments-btn">
-                    View All
-                </button>
+      <section class="chat-profile">
+        <div class="chat-users__search search-box">
+          <input type="text" placeholder="Search People" />
+          <i class="bx bx-search"></i>
+        </div>
+        <div class="chat-profile__user">
+          <div class="chat-profile__user-img">
+            <img src="./images/2.jpg" class="chat-profile__user-pic" />
+          </div>
+          <div class="chat-profile__user-details">
+            <h4 class="chat-profile__user-name">Alicia Wright</h4>
+            <p class="chat-profile__user-job">Product Manager</p>
+          </div>
+        </div>
 
+        <div class="chat-profile__chat-icons">
+          <div class="chat-profile__chat-icons--chat">
+            <i class="bx bxs-message-rounded"></i>
+            <p>Chat</p>
+          </div>
+          <div class="line"></div>
+          <div class="chat-profile__chat-icons--chat">
+            <i class="bx bxs-video"></i>
+            <p>Video Call</p>
+          </div>
+        </div>
+
+        <div class="chat-profile__social">
+          <div class="chat-profile__social-comp">
+            <div>
+              <i class="bx bx-user"></i>
             </div>
-        </section>
+            <p>View Friends</p>
+          </div>
+          <div class="chat-profile__social-comp">
+            <div>
+              <i class="bx bx-heart"></i>
+            </div>
+            <p>Add to Favorites</p>
+          </div>
+        </div>
+
+        <div class="chat-profile__attachments">
+          <div class="chat-profile__attachments-heading">Attachments</div>
+          <div class="chat-profile__attachments-types">
+            <p>PDF</p>
+            <p>Video</p>
+            <p>MP3</p>
+            <p>Image</p>
+          </div>
+          <button class="chat-profile__attachments-btn">View All</button>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
 </html>
 
 <!-- <div class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa molestiae rem nisi maxime quaerat delectus est adipisci reprehenderit quas enim?</div> -->

@@ -10,6 +10,11 @@ const searchFriends = document.querySelector(".search-friends");
 const profileName = document.querySelector(".profile-name");
 const jobDesc = document.querySelector(".job-desc");
 const editProfile = document.getElementById("edit-profile");
+const userPic = document.querySelector(".chat-msgs__user-pic");
+const userName = document.querySelector(".chat-msgs__user-name");
+const sidebarName = document.querySelector(".chat-profile__user-name");
+const jobDesignation = document.querySelector(".chat-profile__user-job");
+const sidebarPic = document.querySelector(".chat-profile__user-pic");
 
 editProfile.addEventListener("click", () => {
   profileName.setAttribute("contentEditable", "true");
@@ -51,32 +56,30 @@ const getDate = function () {
   return `${weekday}, ${newDate} ${month} ${year}`;
 };
 
-const updateLS = function (key) {
-  setInterval(function () {
-    if (localStorage.getItem(key)) {
-      localStorage.removeItem(key);
-    }
-    const newItem = localStorage.setItem(key, msgContainer.innerHTML);
-    // console.log(localStorage.getItem(key));
-    return newItem;
-  }, 2000);
-};
+// const updateLS = function (key) {
+//   setInterval(function () {
+//     if (localStorage.getItem(key)) {
+//       localStorage.removeItem(key);
+//     }
+//     const newItem = localStorage.setItem(key, msgContainer.innerHTML);
+//     // console.log(localStorage.getItem(key));
+//     return newItem;
+//   }, 2000);
+// };
 
-const msgDisplay = function () {
-  if (!msgInput.value) return;
+function msgOutput(message, time, image) {
   const msg = document.createElement("div");
   msg.classList.add("msg-wrapper");
   msg.innerHTML = `
-    <p class="msg-style">
-        ${msgInput.value}
-        <span style="position: absolute; bottom: -18px; right: 0; color: rgba(84, 99, 255, 0.75); font-size: 10px;">
-            ${getTime()}
-        </span>
-    </p>
-    <img src="./images/1.jpg" class="msg-user-pic"> 
+  <p class="msg-style">
+    ${message}
+    <span style="position: absolute; bottom: -18px; right: 0; color: rgba(84, 99, 255, 0.75); font-size: 10px;">
+        ${time}
+    </span>
+  </p>
+  <img src=${image} class="msg-user-pic"> 
   `;
-  msgInput.value = "";
-  msgInput.focus();
+  msgContainer.prepend(msg);
 
   const dateHtml = document.createElement("div");
   dateHtml.classList.add("msg-date-wrapper");
@@ -84,13 +87,19 @@ const msgDisplay = function () {
         <div class="msg-date">${getDate()}</div>
         `;
 
-  msgContainer.prepend(msg);
   if (msgContainer.innerHTML.includes(`${getDate()}`)) return;
-  msg.insertAdjacentHTML("afterend", dateHtml.outerHTML);
 
+  msg.insertAdjacentHTML("afterend", dateHtml.outerHTML);
+}
+msgOutput(data[0].msg, data[0].time, data[0].img);
+
+const msgDisplay = function () {
+  if (!msgInput.value) return;
+  msgOutput(msgInput.value, getTime(), "./images/1.jpg");
+  msgInput.value = "";
+  msgInput.focus();
   updateLS("key");
 };
-
 msgDisplay();
 
 sendBtn.addEventListener("click", () => msgDisplay());
@@ -101,20 +110,20 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-msgContainer.innerHTML = localStorage.getItem("key");
-updateLS("key");
+// msgContainer.innerHTML = localStorage.getItem("key");
+// updateLS("key");
 
 //friends data array
 const friendsList = function (arr) {
   return arr.map((person) => {
     const { id, name, img, msg, time } = person;
     const html = `
-    <div class="chat-users__friend">
+    <div class="chat-users__friend ${id === 0 ? "active" : null}">
       <div class="chat-users__friend-img">
           <img src=${img} class="chat-users__friend-pic">
       </div>
       <div class="chat-users__friend-details">
-          <h4>${name}</h4>
+          <h4 class="chat-users__friend-name">${name}</h4>
           <p>${msg}</p>
       </div>
       <div class="chat-users__updates">
@@ -145,4 +154,28 @@ searchFriends.addEventListener("input", (e) => {
     </div>
     `;
   }
+});
+
+friendsContainer.addEventListener("click", function (e) {
+  const element = e.target.closest(".chat-users__friend");
+  const friends = friendsContainer.querySelectorAll(".chat-users__friend");
+  friends.forEach((friend) => friend.classList.remove("active"));
+  const friendPic = element.querySelector(".chat-users__friend-pic");
+  const friendName = element.querySelector(".chat-users__friend-name");
+
+  userName.innerHTML = friendName.innerHTML;
+  userPic.src = friendPic.src;
+  sidebarName.innerHTML = friendName.innerHTML;
+  sidebarPic.src = friendPic.src;
+
+  data.forEach((friend) => {
+    const { name, msg: chatMsg, job, img, time } = friend;
+    if (name === friendName.innerHTML) {
+      element.classList.add("active");
+      jobDesignation.innerHTML = job;
+
+      msgContainer.innerHTML = "";
+      msgOutput(chatMsg, time, img);
+    }
+  });
 });
